@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elephant Species Classifier</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #76b852, #8DC26F);
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            width: 450px;
+            margin: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .upload-box {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #004d00;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #003300;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 300px;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🐘 Elephant Species Classifier</h1>
+
+    <div class="container">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+
+            <div class="upload-box">
+                <input type="file" name="file" required>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if image_path %}
+            <img src="{{ image_path }}" alt="Uploaded Image">
+
+            <div class="result-box">
+                <strong>Prediction:</strong> {{ result }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
