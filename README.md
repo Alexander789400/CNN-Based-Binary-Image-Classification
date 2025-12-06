@@ -28,3 +28,8 @@ Precision vs Recall Imbalance :
 This is actually good balance, especially for binary classification.
 
 This project successfully demonstrates building an end-to-end deep learning image classification system using CNNs. The dataset was preprocessed with augmentation techniques to improve performance. The model achieved around 68% accuracy with balanced precision and recall.
+
+
+## Deployment
+
+This project demonstrates the deployment of a deep learning–based image classification model using Flask, enabling real-time prediction of elephant species through a simple and interactive web interface. A trained CNN model capable of distinguishing between African and Asian elephants is integrated into a lightweight Flask backend, which handles image uploads, preprocessing, and prediction. The frontend allows users to upload an image, after which the server processes it and returns the predicted species with a clean, user-friendly UI. This deployment showcases how machine learning models can be transformed into fully functional applications, making the model accessible to end users without requiring any technical knowledge. It also highlights the use of Flask for production-like model serving, bridging the gap between model development and practical implementation.
